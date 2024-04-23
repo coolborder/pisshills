@@ -139,6 +139,36 @@ function fetchfeed() {
             $user = htmlspecialchars($row["user"]);
             echo "
             <div class='feedcontent' style='text-align: left;'>
+                <a href='/profile.php?profile=$user'><img src='/imgs/avatars/$user.png' style='width: 50px; height:70px;'></a>
+                <pre class='xtxt'>$txt</pre>
+            </div><br>
+            ";
+        };
+
+    } catch (PDOException $e) {
+        return;
+    }
+};
+
+function getuserfeed($name) {
+    try {
+        include(__DIR__ . "../connectudumbfuck.php");
+
+        $stmnt = $conn->prepare("SELECT * FROM `feed` WHERE `user` = :name");
+        $stmnt->bindParam(':name', $name);
+        $stmnt->execute();
+
+        $result = $stmnt->fetchAll(\PDO::FETCH_ASSOC);
+        
+        if (empty($result)) {
+            return;
+        }
+
+        foreach($result as $row) {
+            $txt = htmlspecialchars($row["text"]);
+            $user = htmlspecialchars($row["user"]);
+            echo "
+            <div class='feedcontent' style='text-align: left;'>
                 <img src='/imgs/avatars/$user.png' style='width: 50px; height:70px;'>
                 <pre class='xtxt'>$txt</pre>
             </div><br>
@@ -231,7 +261,7 @@ if (isset($_GET["equipItem"]) and isset($_COOKIE["pissdata"])) {
 
     equipItem(getname(),$item);
 
-    sleep(0.5);
+    sleep(0.25);
 
     header("Location: /includes/profiles.php?redir=yes");
 };

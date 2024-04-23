@@ -36,7 +36,7 @@
                     ?>
                     <?php echo "<img src='/imgs/avatars/$user.png'>"; ?>
                     <br>
-                    <a href="">profile</a>
+                    <?php echo "<a href='/profile.php?profile=$user'>profile</a>"; ?>
                 </div>
             </div>
             <div class="rect2" style="background: #eaeaea;">
