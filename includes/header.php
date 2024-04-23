@@ -2,7 +2,8 @@
 
 // info: header, used in almost every page
 
-echo '
+?>
+
 <!DOCTYPE HTML>
 
 <div class="header" style="background: lightsteelblue; color: blue; font-size: xx-large; overflow: auto;">
@@ -16,6 +17,3 @@ echo '
         <img src="../imgs/pisshills.png" style="display: inline;height: 36px;width: 200px;">
     </div>
 </div>
-';
-
-?>

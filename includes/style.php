@@ -1,7 +1,3 @@
-<?php
-
-echo '
-
 <!-- BEGIN INCLUDED STYLE -->
 
 <style>
@@ -95,6 +91,3 @@ echo '
 </style>
 
 <!-- END INCLUDED STYLE -->
-';
-
-?>
