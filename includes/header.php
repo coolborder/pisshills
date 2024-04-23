@@ -1,6 +1,6 @@
 <?php
 
-// info: header, used in almost every page
+// info: header, used in almost every page lol
 
 ?>
 
