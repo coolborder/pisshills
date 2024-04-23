@@ -231,11 +231,14 @@ if (isset($_GET["equipItem"]) and isset($_COOKIE["pissdata"])) {
 
     equipItem(getname(),$item);
 
+    sleep(0.5);
+
     header("Location: /includes/profiles.php?redir=yes");
 };
 
 if (isset($_GET["redir"]) and isset($_COOKIE["pissdata"])) {
+    echo "Redirecting back...";
     header("Location: /avatar.php");
-}
+};
 
 ?>
